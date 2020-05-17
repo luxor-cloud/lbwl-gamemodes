@@ -6,8 +6,8 @@ import pysftp
 import zipfile
 
 def downloadAndUnzip(remote_path, local_path):
-  sftp.get(remote_path, local_path)
   print 'DOWNLOAD ' + remote_path.format('spawn', data['spawn']['version'])
+  sftp.get(remote_path, local_path)
   with zipfile.ZipFile(local_path, "r") as zip_ref:
     zip_ref.extractall(local_path[:-4])
 
@@ -21,9 +21,13 @@ os.mkdir("work/maps")
 cnopts = pysftp.CnOpts()
 cnopts.hostkeys = None 
 
+host = os.environ['MAP_STORAGE_HOST']
+user = os.environ['MAP_STORAGE_USER']
+passwd = os.environ['MAP_STORAGE_PASSWORD']
+
 # TODO: download game jar
 
-with pysftp.Connection(host=os.environ['MAP_STORAGE_HOST'], username=os.environ['MAP_STORAGE_USER'], password=os.environ['MAP_STORAGE_PASSWORD'], cnopts=cnopts) as sftp:
+with pysftp.Connection(host=host, username=user, password=passwd, cnopts=cnopts) as sftp:
   remote_path = "/lbwl/maps/flash/{}/{}.zip"
   downloadAndUnzip(remote_path.format('spawn', data['spawn']['version']), "work/spawn.zip")
   for v in data['maps']:
