@@ -1,0 +1,156 @@
+{
+  "jar": {
+    "name": "flash",
+    "version": "1.0.1"
+  },
+  "spawn": {
+    "version": "v2"
+  },
+  "maps": [
+    {
+      "name": "AgainAndAgain",
+      "version": "v2"
+    },
+    {
+      "name": "Barock",
+      "version": "v1"
+    },
+    {
+      "name": "CandyLand",
+      "version": "v2"
+    },
+    {
+      "name": "Columbia",
+      "version": "v1"
+    },
+    {
+      "name": "Contrast",
+      "version": "v1"
+    },
+    {
+      "name": "Desert",
+      "version": "v1"
+    },
+    {
+      "name": "Dragoncave",
+      "version": "v1"
+    },
+    {
+      "name": "Holzweg2",
+      "version": "v2"
+    },
+    {
+      "name": "Honigtopf",
+      "version": "v2"
+    },
+    {
+      "name": "Neverland",
+      "version": "v2"
+    },
+    {
+      "name": "River",
+      "version": "v2"
+    },
+    {
+      "name": "Savannensause",
+      "version": "v2"
+    },
+    {
+      "name": "StoryOfAClownfish",
+      "version": "v2"
+    },
+    {
+      "name": "Traeume",
+      "version": "v2"
+    },
+    {
+      "name": "Wunderland",
+      "version": "v1"
+    },
+    {
+      "name": "Zauberwelt",
+      "version": "v1"
+    },
+
+    {
+      "name": "Apokalypse",
+      "version": "v2"
+    },
+    {
+      "name": "Art",
+      "version": "v2"
+    },
+    {
+      "name": "BergWars",
+      "version": "v2"
+    },
+    {
+      "name": "DifferentWorlds",
+      "version": "v1"
+    },
+    {
+      "name": "Disney",
+      "version": "v1"
+    },
+    {
+      "name": "Entlein",
+      "version": "v2"
+    },
+    {
+      "name": "EuropeTravel",
+      "version": "v2"
+    },
+    {
+      "name": "Fantasy",
+      "version": "v2"
+    },
+    {
+      "name": "Film",
+      "version": "v2"
+    },
+    {
+      "name": "GTA",
+      "version": "v2"
+    },
+    {
+      "name": "Herbst",
+      "version": "v1"
+    },
+    {
+      "name": "HiddenLand",
+      "version": "v2"
+    },
+    {
+      "name": "Labtris",
+      "version": "v2"
+    },
+    {
+      "name": "Music",
+      "version": "v2"
+    },
+    {
+      "name": "Pac_World",
+      "version": "v2"
+    },
+    {
+      "name": "Portal",
+      "version": "v2"
+    },
+    {
+      "name": "Racetrack",
+      "version": "v2"
+    },
+    {
+      "name": "Sonic",
+      "version": "v2"
+    },
+    {
+      "name": "Space",
+      "version": "v2"
+    },
+    {
+      "name": "Zeit",
+      "version": "v2"
+    }
+  ]
+}
