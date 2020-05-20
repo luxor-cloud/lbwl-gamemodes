@@ -5,6 +5,7 @@ import os
 import pysftp
 import zipfile
 import urllib.request
+import base64
 
 def downloadAndUnzip(remote_path, local_path):
   print('DOWNLOAD > {}'.format(remote_path.format('spawn', data['spawn']['version'])))
@@ -33,8 +34,16 @@ nexus_passwd = os.environ['MVN_REPO_PASSWORD']
 mode_name = data['jar']['name']
 mode_version = data['jar']['version']
 
-url = 'http://{user}:{passwd}@{host}/repository/lbwl-mvn-releases/cloud/luxor/lbwl/{game}/{version}/{game}-{version}.jar'
-urllib.request.urlretrieve(url.format(user=nexus_user, passwd=nexus_passwd, game=mode_name, version=mode_version, '.work/{}-{}'.format(mode_name, mode_version))
+url = 'http://{host}/repository/lbwl-mvn-releases/cloud/luxor/lbwl/{game}/{version}/{game}-{version}.jar'
+auth = base64.b64encode('{}:{}'.format(nexus_user, nexus_passwd).encode('utf-8')).decode('ascii')
+
+opener = urllib.request.build_opener()
+opener.addheaders = [('Authorization', 'Basic {}'.format(auth))]
+urllib.request.install_opener(opener)
+urllib.request.urlretrieve(
+  url.format(host=nexus_host, game=mode_name, version=mode_version), 
+  '.work/{}-{}'.format(mode_name, mode_version)
+)
 
 with pysftp.Connection(host=storage_host, username=storage_user, password=storage_passwd, cnopts=cnopts) as sftp:
   remote_path = '/lbwl/maps/flash/{}/{}.zip'

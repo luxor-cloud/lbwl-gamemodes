@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import argparse
 import json
@@ -21,4 +21,4 @@ if args.update:
 if args.mode:
   with open('.metadata', 'r') as json_file:
     data = json.load(json_file)
-    print data[args.mode]
+    print(data[args.mode])
