@@ -10,7 +10,7 @@ parser.add_argument('--mode')
 args = parser.parse_args()
 
 if args.update:
-  sha1hash = dirhash(args.update, 'sha1', excluded_files=['collect.py'], ignore_hidden=True)
+  sha1hash = dirhash(args.update, 'sha1', excluded_files=['collect.py', 'Dockerfile'], ignore_hidden=True)
   with open('.metadata', 'r+') as json_file:
     data = json.load(json_file)
     data[args.update] = sha1hash

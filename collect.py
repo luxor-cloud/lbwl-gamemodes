@@ -42,7 +42,7 @@ opener.addheaders = [('Authorization', 'Basic {}'.format(auth))]
 urllib.request.install_opener(opener)
 urllib.request.urlretrieve(
   url.format(host=nexus_host, game=mode_name, version=mode_version), 
-  '.work/{}-{}'.format(mode_name, mode_version)
+  '.work/{}.jar'.format(mode_name)
 )
 
 with pysftp.Connection(host=storage_host, username=storage_user, password=storage_passwd, cnopts=cnopts) as sftp:
