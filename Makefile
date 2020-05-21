@@ -8,5 +8,6 @@ endef
 mode_flash:
 	./metadata.py --update flash
 	cd flash && ./collect.py
-        VER := $(./metadata.py --mode-version)
-	$(call buildpush freggyy/lbwl-flash:$(VER) flash)
+        $(eval ver=$(./metadata.py --mode-version))
+	$(DOCKER) build -t freggyy/lbwl-flash:$(ver) -f flash/Dockerfile flash/
+	$(DOCKER) push freggyy/lbwl-flash:$(ver)
