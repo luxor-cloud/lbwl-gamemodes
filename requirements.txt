@@ -1,2 +1,1 @@
-checksumdir==1.1.7
 pysftp==0.2.9

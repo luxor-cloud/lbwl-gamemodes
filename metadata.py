@@ -2,7 +2,8 @@
 
 import argparse
 import json
-from checksumdir import dirhash
+import hashlib
+import os
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--update')
@@ -16,10 +17,25 @@ def read_mode_file(mode):
     return data
 
 if args.update:
-  sha1hash = dirhash(args.update, 'sha1', excluded_files=['collect.py', 'Dockerfile'], ignore_hidden=True)
+  ghasher = hashlib.sha1()  
+  exclude = ['.work']
+  for root, dirs, files in os.walk(args.update, topdown=True):
+    # https://stackoverflow.com/questions/19859840/excluding-directories-in-os-walk
+    dirs[:] = [d for d in dirs if d not in exclude]
+    for name in files:
+        if name == 'collect.py':
+          continue
+        if name == 'Dockerfile':
+          continue
+        file_name = os.path.join(root, name)
+        fhasher = hashlib.sha1()
+        with open(str(file_name), 'rb') as afile:
+            buf = afile.read()
+            fhasher.update(buf)
+        ghasher.update(fhasher.digest())
   with open('.metadata', 'r+') as json_file:
     data = json.load(json_file)
-    data[args.update] = sha1hash
+    data[args.update] = ghasher.hexdigest()
     json_file.seek(0)
     json.dump(data, json_file, indent=2)
     json_file.truncate()

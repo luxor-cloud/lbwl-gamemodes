@@ -6,8 +6,9 @@ import pysftp
 import zipfile
 import urllib.request
 import base64
+import shutil
 
-def downloadAndUnzip(remote_path, local_path):
+def download_and_unzip(remote_path, local_path):
   print('DOWNLOAD > {}'.format(remote_path.format('spawn', data['spawn']['version'])))
   sftp.get(remote_path, local_path)
   with zipfile.ZipFile(local_path, 'r') as zip_ref:
@@ -46,8 +47,10 @@ urllib.request.urlretrieve(
 )
 
 with pysftp.Connection(host=storage_host, username=storage_user, password=storage_passwd, cnopts=cnopts) as sftp:
-  remote_path = '/lbwl/maps/flash/{}/{}.zip'
-  downloadAndUnzip(remote_path.format('spawn', data['spawn']['version']), '.work/spawn.zip')
+  remote_path = '/lbwl/maps/{}/{}/{}.zip'
+  downloadAndUnzip(remote_path.format(mode_name, 'spawn', data['spawn']['version']), '.work/spawn.zip')
   for v in data['maps']:
     path = remote_path.format(v['name'], v['version'])
     downloadAndUnzip(path, '.work/maps/{}.zip'.format(v['name']))
+
+shutil.rmtree('.work')
