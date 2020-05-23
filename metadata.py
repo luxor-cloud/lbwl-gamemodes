@@ -6,7 +6,7 @@ from checksumdir import dirhash
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--update')
-parser.add_argument('--mode')
+parser.add_argument('--rev')
 parser.add_argument('--mode-version')
 args = parser.parse_args()
 
@@ -24,10 +24,10 @@ if args.update:
     json.dump(data, json_file, indent=2)
     json_file.truncate()
 
-if args.mode:
+if args.rev:
   with open('.metadata', 'r') as json_file:
     data = json.load(json_file)
-    print(data[args.mode])
+    print(data[args.rev])
 
 if args.mode_version:
   print(read_mode_file(args.mode_version)['version'])
