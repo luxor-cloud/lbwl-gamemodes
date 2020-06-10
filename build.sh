@@ -6,7 +6,7 @@ for d in */ ; do
   mode=$(basename $d)
   ver=$(./metadata.py --mode-version $mode)
   
-  echo 'INFO lbwl-$mode v$ver'
+  echo "INFO lbwl-$mode v$ver"
   cd flash && ./collect.py && cd ..
 
   exists=$(docker manifest inspect lbwl-$mode:$ver > /dev/null ; echo $?)
@@ -15,6 +15,6 @@ for d in */ ; do
     docker build -t $DOCKER_REPO_URL/$tag -f $dDockerfile $d
     docker push $tag
   else 
-    echo 'INFO lbwl-$mode v$ver already exists, not updating'
+    echo "INFO lbwl-$mode v$ver already exists, not updating"
   fi
 done
