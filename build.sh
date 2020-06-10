@@ -19,6 +19,7 @@ for d in */ ; do
   exists=$(docker manifest inspect $tag > /dev/null ; echo $?)
   
   if [ $exists == 1 ]; then
+    echo "docker build -t $tag -f $mode/Dockerfile $d"
     docker build -t $tag -f $mode/Dockerfile $d
     docker push $tag
   else 
