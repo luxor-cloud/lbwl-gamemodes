@@ -53,5 +53,3 @@ with pysftp.Connection(host=storage_host, username=storage_user, password=storag
   for v in data['maps']:
     path = remote_path.format(mode_name, v['name'], v['version'])
     download_and_unzip(path, '.work/maps/{}.zip'.format(v['name']))
-
-shutil.rmtree('.work')
