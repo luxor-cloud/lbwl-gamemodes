@@ -9,14 +9,17 @@ for d in */ ; do
   ver=$(./metadata.py --mode-version $mode)
   
   echo "INFO lbwl-$mode v$ver"
-  cd flash && ./collect.py && cd ..
+  cd $d
+  ./collect.py
+  cd ..
 
+
+  tag=$DOCKER_REPO_URL/lbwl-$mode:$ver
   sudo chmod o+x /etc/docker
-  exists=$(docker manifest inspect $DOCKER_REPO_URL/lbwl-$mode:$ver > /dev/null ; echo $?)
-  echo $exists
+  exists=$(docker manifest inspect $tag > /dev/null ; echo $?)
+  
   if [ $exists == 1 ]; then
-    tag=$DOCKER_REPO_URL/lbwl-$mode:$ver
-    docker build -t $DOCKER_REPO_URL/$tag -f $dDockerfile $d
+    docker build -t $tag -f $mode/Dockerfile $d
     docker push $tag
   else 
     echo "INFO lbwl-$mode v$ver already exists, not updating"
