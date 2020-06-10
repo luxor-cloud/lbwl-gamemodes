@@ -49,7 +49,7 @@ urllib.request.urlretrieve(
 
 with pysftp.Connection(host=storage_host, username=storage_user, password=storage_passwd, cnopts=cnopts) as sftp:
   remote_path = '/lbwl/maps/{}/{}/{}.zip'
-  downloadAndUnzip(remote_path.format(mode_name, 'spawn', data['spawn']['version']), '.work/spawn.zip')
+  download_and_unzip(remote_path.format(mode_name, 'spawn', data['spawn']['version']), '.work/spawn.zip')
   for v in data['maps']:
     path = remote_path.format(v['name'], v['version'])
     downloadAndUnzip(path, '.work/maps/{}.zip'.format(v['name']))
