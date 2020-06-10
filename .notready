@@ -1,0 +1,13 @@
+language: python
+python:
+  - "3.8"
+services:
+  - docker
+
+before_install:
+  - docker login $DOCKER_REPO_URL -u $DOCKER_REPO_USER -p $DOCKER_REPO_PASSWD
+  - echo '{"experimental": "enabled"}' > ~/.docker/config.json
+
+install:
+  - pip install -r requirements.txt
+

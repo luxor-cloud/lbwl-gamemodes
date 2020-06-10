@@ -17,6 +17,7 @@ def download_and_unzip(remote_path, local_path):
 data = {}
 with open('mode.json') as json_file:
   data = json.load(json_file)
+  
 
 os.mkdir('.work')
 os.mkdir('.work/maps')
