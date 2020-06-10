@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-docker login $DOCKER_REPO_URL -u $DOCKER_REPO_USER -p $DOCKER_REPO_PASSWD
+docker login $DOCKER_REPO_URL -u $DOCKER_REPO_USER -p $DOCKER_REPO_PASSWORD
 
 for d in */ ; do
   mode=$(basename $d)
