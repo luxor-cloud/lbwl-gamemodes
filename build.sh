@@ -11,6 +11,7 @@ for d in */ ; do
   echo "INFO lbwl-$mode v$ver"
   cd flash && ./collect.py && cd ..
 
+  sudo chmod o+x /etc/docker
   exists=$(docker manifest inspect $DOCKER_REPO_URL/lbwl-$mode:$ver > /dev/null ; echo $?)
   if [ $exists == 0 ]; then
     tag=$DOCKER_REPO_URL/lbwl-$mode:$ver
