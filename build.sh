@@ -13,7 +13,8 @@ for d in */ ; do
 
   sudo chmod o+x /etc/docker
   exists=$(docker manifest inspect $DOCKER_REPO_URL/lbwl-$mode:$ver > /dev/null ; echo $?)
-  if [ $exists == 0 ]; then
+  echo $exists
+  if [ $exists == 1 ]; then
     tag=$DOCKER_REPO_URL/lbwl-$mode:$ver
     docker build -t $DOCKER_REPO_URL/$tag -f $dDockerfile $d
     docker push $tag
