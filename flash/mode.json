@@ -5,157 +5,156 @@
     "version": "1.0.1"
   },
   "spawn": {
-    "version": "v2"
+    "version": "2"
   },
   "maps": [
     {
-      "name": "AgainAndAgain",
-      "version": "v2"
+      "name": "again-and-again",
+      "version": "2"
     },
     {
-      "name": "Biomes",
-      "version": "v1"
+      "name": "biomes",
+      "version": "1"
     },
     {
-      "name": "Barock",
-      "version": "v1"
+      "name": "barock",
+      "version": "1"
     },
     {
-      "name": "CandyLand",
-      "version": "v2"
+      "name": "candy-land",
+      "version": "2"
     },
     {
-      "name": "Columbia",
-      "version": "v1"
+      "name": "columbia",
+      "version": "1"
     },
     {
-      "name": "Contrast",
-      "version": "v1"
+      "name": "contrast",
+      "version": "1"
     },
     {
-      "name": "Desert",
-      "version": "v1"
+      "name": "desert",
+      "version": "1"
     },
     {
-      "name": "Dragoncave",
-      "version": "v1"
+      "name": "dragoncave",
+      "version": "1"
     },
     {
-      "name": "Holzweg2",
-      "version": "v2"
+      "name": "holzweg2",
+      "version": "2"
     },
     {
-      "name": "Honigtopf",
-      "version": "v2"
+      "name": "honigtopf",
+      "version": "2"
     },
     {
-      "name": "Neverland",
-      "version": "v2"
+      "name": "neverland",
+      "version": "2"
     },
     {
-      "name": "River",
-      "version": "v2"
+      "name": "river",
+      "version": "2"
     },
     {
-      "name": "Savannensause",
-      "version": "v2"
+      "name": "savannensause",
+      "version": "2"
     },
     {
-      "name": "StoryOfAClownfish",
-      "version": "v2"
+      "name": "story-of-a-clownfish",
+      "version": "2"
     },
     {
-      "name": "Traeume",
-      "version": "v2"
+      "name": "traeume",
+      "version": "2"
     },
     {
-      "name": "Wunderland",
-      "version": "v1"
+      "name": "wunderland",
+      "version": "1"
     },
     {
-      "name": "Zauberwelt",
-      "version": "v1"
-    },
-
-    {
-      "name": "Apokalypse",
-      "version": "v2"
+      "name": "zauberwelt",
+      "version": "1"
     },
     {
-      "name": "Art",
-      "version": "v2"
+      "name": "apokalypse",
+      "version": "2"
     },
     {
-      "name": "BergWars",
-      "version": "v2"
+      "name": "art",
+      "version": "2"
     },
     {
-      "name": "DifferentWorlds",
-      "version": "v1"
+      "name": "berg-wars",
+      "version": "2"
     },
     {
-      "name": "Disney",
-      "version": "v1"
+      "name": "different-worlds",
+      "version": "1"
     },
     {
-      "name": "Entlein",
-      "version": "v2"
+      "name": "disney",
+      "version": "1"
     },
     {
-      "name": "EuropeTravel",
-      "version": "v2"
+      "name": "entlein",
+      "version": "2"
     },
     {
-      "name": "Fantasy",
-      "version": "v2"
+      "name": "europe-travel",
+      "version": "2"
     },
     {
-      "name": "Film",
-      "version": "v2"
+      "name": "fantasy",
+      "version": "2"
     },
     {
-      "name": "GTA",
-      "version": "v2"
+      "name": "film",
+      "version": "2"
     },
     {
-      "name": "Herbst",
-      "version": "v1"
+      "name": "gta",
+      "version": "2"
     },
     {
-      "name": "HiddenLand",
-      "version": "v2"
+      "name": "herbst",
+      "version": "1"
     },
     {
-      "name": "Labtris",
-      "version": "v2"
+      "name": "hidden-land",
+      "version": "2"
     },
     {
-      "name": "Music",
-      "version": "v2"
+      "name": "labtris",
+      "version": "2"
     },
     {
-      "name": "Pac_World",
-      "version": "v2"
+      "name": "music",
+      "version": "2"
     },
     {
-      "name": "Portal",
-      "version": "v2"
+      "name": "pac-world",
+      "version": "2"
     },
     {
-      "name": "Racetrack",
-      "version": "v2"
+      "name": "portal",
+      "version": "2"
     },
     {
-      "name": "Sonic",
-      "version": "v2"
+      "name": "racetrack",
+      "version": "2"
     },
     {
-      "name": "Space",
-      "version": "v2"
+      "name": "sonic",
+      "version": "2"
     },
     {
-      "name": "Zeit",
-      "version": "v2"
+      "name": "space",
+      "version": "2"
+    },
+    {
+      "name": "zeit",
+      "version": "2"
     }
   ]
 }
