@@ -1,4 +1,4 @@
-FROM freggyy/paperspigot:1.8.8
+FROM docker.luxor.cloud/lbwl/paperspigot:1.8.8
 
 COPY . .
 COPY .work/maps/ /opt/spigot/plugins/Flash/maps
