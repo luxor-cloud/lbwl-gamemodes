@@ -76,5 +76,8 @@ client = boto3.session.Session().client(
   aws_secret_access_key=do_secret
 )
 
+# append spawn map to maps
+data['maps'].append({ 'name': 'spawn', 'version': data['spawn']['version'] })
+
 for key, result in download_all_maps(client, data['maps']):
   print('{}: {}'.format(key, result))
