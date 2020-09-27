@@ -8,17 +8,17 @@ import base64
 import boto3
 from concurrent import futures
 
-def download_map(client, map):
-  local_path = '.work/maps/{}.zip'.format(map['name'])
+def download_map(client, local_path, map):
+  path = local_path.format(map['name'])
   key = 'lbwl/maps/flash/{}/v{}.zip'.format(map['name'], map['version'])
-  with open(local_path, 'wb+') as file:
+  with open(path, 'wb+') as file:
     client.download_fileobj('luxor', key, file)
-  with zipfile.ZipFile(local_path, 'r') as zip_ref:
-    zip_ref.extractall(local_path[:-4])
+  with zipfile.ZipFile(path, 'r') as zip_ref:
+    zip_ref.extractall(path[:-4])
 
 def download_all_maps(client, maps):
   with futures.ThreadPoolExecutor(max_workers=5) as executor:
-    future_to_key = {executor.submit(download_map, client, map): map for map in maps}
+    future_to_key = {executor.submit(download_map, client, '.work/maps/{}.zip', map): map for map in maps}
     for future in futures.as_completed(future_to_key):
       key = future_to_key[future]
       exception = future.exception()
@@ -76,8 +76,8 @@ client = boto3.session.Session().client(
   aws_secret_access_key=do_secret
 )
 
-# append spawn map to maps
-data['maps'].append({ 'name': 'spawn', 'version': data['spawn']['version'] })
+# download spawn seperately
+download_map(client, '.work/{}.zip', { 'name': 'spawn', 'version': data['spawn']['version'] })
 
 for key, result in download_all_maps(client, data['maps']):
   print('{}: {}'.format(key, result))
